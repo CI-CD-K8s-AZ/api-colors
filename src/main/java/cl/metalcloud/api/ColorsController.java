@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/colors")
-public class NamesController {
+public class ColorsController {
 
 	private static ArrayList<String> colors = new ArrayList<>(Arrays.asList("Blue","Red","Yellow", "Orange", "Green"));
 	
