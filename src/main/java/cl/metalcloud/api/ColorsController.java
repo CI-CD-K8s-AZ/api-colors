@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/colors")
+@CrossOrigin("*")
 public class ColorsController {
 
 	private static ArrayList<String> colors = new ArrayList<>(Arrays.asList("Blue","Red","Yellow", "Orange", "Green"));
@@ -29,6 +31,6 @@ public class ColorsController {
 	    int index = getRandomNumber(1, colors.size()) - 1;
 	    if(index < 0) index = 0;
 	    if(index > colors.size()) index = colors.size()-1;
-		return colors.get(index);
+		return "\"" + colors.get(index) + "\"";
 	}
 }
